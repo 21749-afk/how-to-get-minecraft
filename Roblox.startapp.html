@@ -1,0 +1,10 @@
+const noblox = require('noblox.js')
+
+async function startApp () {
+    // You MUST call setCookie() before using any authenticated methods [marked by 🔐]
+    // Replace the parameter in setCookie() with your .ROBLOSECURITY cookie.
+    const currentUser = await noblox.setCookie('YOUR_ROBLOSECURITY_COOKIE')
+    console.log(`Logged in as ${currentUser.UserName} [${currentUser.UserID}]`)
+}
+
+startApp()
