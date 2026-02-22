@@ -1,0 +1,14 @@
+import { system, world } from "@minecraft/server";
+
+function mainTick() {
+    // Check every tick, but only run logic on tick 400
+    if (system.currentTick === 400) {
+        world.sendMessage("All systems GO!");
+    }
+    
+    // Continue running this function on the next tick
+    system.run(mainTick);
+}
+
+// Start the loop
+system.run(mainTick);
